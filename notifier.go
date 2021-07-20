@@ -9,7 +9,7 @@ import (
 func notify() {
 	defaultMessages := []string{"Time to move around!", "Go for a quick walk!", "One quick minute of exercise is all it takes!"}
 
-	err := beeep.Notify("Lively", getMessage(defaultMessages), "")
+	err := beeep.Alert("Lively", getMessage(defaultMessages), "")
 	if err != nil {
 		panic(err)
 	}
