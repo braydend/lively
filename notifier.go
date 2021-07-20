@@ -1,4 +1,4 @@
-package lively
+package main
 
 import (
 	"github.com/gen2brain/beeep"

@@ -1,4 +1,4 @@
-package lively
+package main
 
 import "flag"
 
