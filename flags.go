@@ -3,13 +3,13 @@ package main
 import "flag"
 
 type flags struct {
-	interval int
+	configFile string
 }
 
 func initFlags() flags {
-	var interval int
-	flag.IntVar(&interval, "interval", 30, "The amount of minutes between activity reminders")
+	var configFile string
+	flag.StringVar(&configFile, "config", "config.yml", "A YAML file to configure the app")
 	flag.Parse()
 
-	return flags{interval}
+	return flags{configFile}
 }

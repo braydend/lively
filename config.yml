@@ -1,0 +1,8 @@
+start: 0800
+end: 1700
+interval: 60
+messages:
+  - Get up and move around!
+  - Move your legs!
+  - Go for a quick walk!
+  - Remember to blink!
