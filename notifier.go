@@ -6,17 +6,15 @@ import (
 	"time"
 )
 
-func notify() {
-	defaultMessages := []string{"Time to move around!", "Go for a quick walk!", "One quick minute of exercise is all it takes!"}
-
-	err := beeep.Alert("Lively", getMessage(defaultMessages), "")
+func notify(messages []string) {
+	err := beeep.Alert("Lively", getRandomMessage(messages), "")
 	if err != nil {
 		panic(err)
 	}
 }
 
-func getMessage(messages []string) string {
+func getRandomMessage(messages []string) string {
 	rand.Seed(time.Now().UnixNano())
 
-	return messages[rand.Int() % len(messages)]
+	return messages[rand.Int()%len(messages)]
 }
