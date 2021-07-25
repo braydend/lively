@@ -1,6 +1,7 @@
 package main
 
 import (
+	_ "embed"
 	"gopkg.in/yaml.v2"
 )
 
@@ -9,6 +10,17 @@ type Config struct {
 	End      string   `yaml:"end"`
 	Interval int      `yaml:"interval"`
 	Messages []string `yaml:"messages"`
+}
+
+//go:embed config.yml
+var defaultConfig []byte
+
+func ParseConfigFromFile(filename string) Config {
+	if filename == "" {
+		return ParseConfig(defaultConfig)
+	}
+
+	return ParseConfig(ReadFile(filename))
 }
 
 func ParseConfig(configData []byte) (config Config) {

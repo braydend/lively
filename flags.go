@@ -8,7 +8,7 @@ type flags struct {
 
 func initFlags() flags {
 	var configFile string
-	flag.StringVar(&configFile, "config", "config.yml", "A YAML file to configure the app")
+	flag.StringVar(&configFile, "config", "", "A YAML file to configure the app")
 	flag.Parse()
 
 	return flags{configFile}
