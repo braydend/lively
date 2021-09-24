@@ -7,13 +7,13 @@ import (
 )
 
 func notify(messages []string) {
-	err := beeep.Alert("Lively", getRandomMessage(messages), "")
+	err := beeep.Alert("Lively", GetRandomMessage(messages), "")
 	if err != nil {
 		panic(err)
 	}
 }
 
-func getRandomMessage(messages []string) string {
+func GetRandomMessage(messages []string) string {
 	rand.Seed(time.Now().UnixNano())
 
 	return messages[rand.Int()%len(messages)]
