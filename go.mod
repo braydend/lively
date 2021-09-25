@@ -3,10 +3,7 @@ module lively
 go 1.16
 
 require (
-	github.com/gen2brain/beeep v0.0.0-20210529141713-5586760f0cc1
-	github.com/godbus/dbus/v5 v5.0.4 // indirect
-	github.com/gopherjs/gopherjs v0.0.0-20210707094841-eea289f08d45 // indirect
-	github.com/wailsapp/wails v1.16.7
-	golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c // indirect
+	github.com/kr/pretty v0.1.0 // indirect
+	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
 	gopkg.in/yaml.v2 v2.4.0
 )
