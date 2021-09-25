@@ -1,16 +1,17 @@
 package main
 
 import (
+	"lively/utils"
 	"log"
 	"os/exec"
 )
 
 func main() {
-	flags := initFlags()
-	config := ParseConfigFromFile(flags.configFile)
+	flags := utils.InitFlags()
+	config := utils.ParseConfigFromFile(flags.ConfigFile)
 	notificationCallback := func() {
 		notify := func() {
-			cmd := exec.Command("gui/build/gui", "--message", GetRandomMessage(config.Messages))
+			cmd := exec.Command("gui/build/gui", "--message", utils.GetRandomMessage(config.Messages))
 			err := cmd.Run()
 
 			if err != nil {
@@ -20,5 +21,5 @@ func main() {
 
 		go notify()
 	}
-	StartTimer(config, notificationCallback)
+	utils.StartTimer(config, notificationCallback)
 }

@@ -1,12 +1,12 @@
-package main
+package utils
 
 import "flag"
 
 type flags struct {
-	configFile string
+	ConfigFile string
 }
 
-func initFlags() flags {
+func InitFlags() flags {
 	var configFile string
 	flag.StringVar(&configFile, "config", "", "A YAML file to configure the app")
 	flag.Parse()

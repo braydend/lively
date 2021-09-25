@@ -1,4 +1,4 @@
-package main
+package utils
 
 import (
 	_ "embed"
@@ -12,7 +12,7 @@ type Config struct {
 	Messages []string `yaml:"messages"`
 }
 
-//go:embed config.yml
+//go:embed defaultConfig.yml
 var defaultConfig []byte
 
 func ParseConfigFromFile(filename string) Config {
