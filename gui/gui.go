@@ -21,13 +21,13 @@ func getMessage() string {
 }
 
 func main() {
-	flag.StringVar(&message, "message", "", "Message to show in GUI")
+	flag.StringVar(&message, "message", "Get up and move!", "Message to show in GUI")
 
 	flag.Parse()
 
 	app := wails.CreateApp(&wails.AppConfig{
-		Width:  1024,
-		Height: 768,
+		Width:  640,
+		Height: 480,
 		Title:  "gui",
 		JS:     js,
 		CSS:    css,

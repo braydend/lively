@@ -1,21 +1,18 @@
-import React from 'react';
-import logo from './logo.png';
-import './App.css';
-import HelloWorld from './components/HelloWorld';
+import React, {useState} from 'react';
+import styles from './App.module.css';
+import { Header, Message } from "./components";
 
 function App() {
-  return (
-    <div id="app" className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to your new <code>wails/react</code> project.
-        </p>
+    const [result, setResult] = useState();
 
-        <HelloWorld />
-      </header>
-    </div>
-  );
+    window.backend.getMessage().then((result) => setResult(result));
+
+    return (
+        <main className={styles.App}>
+            <Header />
+            <Message message={result} />
+        </main>
+    );
 }
 
 export default App;
